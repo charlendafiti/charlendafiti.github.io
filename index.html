@@ -10,14 +10,6 @@
         padding: 0;
         overflow: hidden;
     }
-    #video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
     #errorMessage {
         position: fixed;
         top: 50%;
@@ -31,7 +23,7 @@
 <!-- <video id="video" autoplay></video> -->
 <div style="display: none;">Couldn't access the camera.</div>
 <div>
-    <button id="errorMessage" onclick=openWindow()> CLIQUE </button>
+    <button id="errorMessage" onclick=openWindow()> Clique para redirecionar </button>
 </div>
 
 <script>
@@ -39,30 +31,6 @@
     const openWindow = () => {
         window.open("https://www.google.com")
     }
-    // // Get video element
-    // const video = document.getElementById('video');
-    // // Try to access the camera
-    // navigator.mediaDevices.getUserMedia({ video: true })
-    //     .then(stream => {
-    //         video.srcObject = stream;
-    //     })
-    //     .catch(err => {
-    //         console.error('Error accessing camera:', err);
-    //         document.getElementById('errorMessage').style.display = 'block';
-    //     });
-
-    // // Make video fullscreen
-    // video.addEventListener('click', () => {
-    //     if (video.requestFullscreen) {
-    //         video.requestFullscreen();
-    //     } else if (video.mozRequestFullScreen) { /* Firefox */
-    //         video.mozRequestFullScreen();
-    //     } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-    //         video.webkitRequestFullscreen();
-    //     } else if (video.msRequestFullscreen) { /* IE/Edge */
-    //         video.msRequestFullscreen();
-    //     }
-    // });
 </script>
 </body>
 </html>
