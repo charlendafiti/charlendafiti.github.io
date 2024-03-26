@@ -23,13 +23,13 @@
 <!-- <video id="video" autoplay></video> -->
 <div style="display: none;">Couldn't access the camera.</div>
 <div>
-    <button id="errorMessage" onclick=openWindow()> Clique para redirecionar </button>
+    <button id="errorMessage" onclick=openWindowWithDefaultBrowser()> Clique para redirecionar com navegador padrao</button>
 </div>
 
 <script>
-
-    const openWindow = () => {
-        window.open("https://www.google.com")
+    const openWindowWithDefaultBrowser = () => {
+        console.log("clicado")
+        window.location = 'intent:https://www.google.com#Intent;end';
     }
 </script>
 </body>
