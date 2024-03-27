@@ -10,52 +10,27 @@
         padding: 0;
         overflow: hidden;
     }
-    #video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+
+    html, body {
         height: 100%;
-        object-fit: cover;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    #errorMessage {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
+
+    button {
+        padding: 1rem;
+        font-size: 1rem;
     }
 </style>
+<script lang="javascript">
+    function openCamPage(){
+        document.location = "/cam/opencam"
+    }
+</script>
 </head>
 <body>
-<video id="video" autoplay></video>
-<div id="errorMessage" style="display: none;">Couldn't access the camera.</div>
-
-<script>
-    // Get video element
-    const video = document.getElementById('video');
-    // Try to access the camera
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-        })
-        .catch(err => {
-            console.error('Error accessing camera:', err);
-            document.getElementById('errorMessage').style.display = 'block';
-        });
-
-    // Make video fullscreen
-    video.addEventListener('click', () => {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { /* Firefox */
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { /* IE/Edge */
-            video.msRequestFullscreen();
-        }
-    });
-</script>
+<button onclick="openCamPage()">Open Cam Page</button>
 </body>
 </html>
